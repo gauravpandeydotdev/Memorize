@@ -5,7 +5,7 @@
 //  Created by Gaurav Pandey on 7/26/21.
 //
 
-import SwiftUI
+import  SwiftUI
 
 struct ContentView: View {
     var body: some View {
@@ -23,9 +23,15 @@ struct cardView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
+                .fill()
+                .foregroundColor(.white)
+            
+            RoundedRectangle(cornerRadius: 25)
                 .stroke(lineWidth: 3)
+                .foregroundColor(.red)
             
             Text("Hello, world!")
+                .foregroundColor(Color.black)
         }
     }
 }
@@ -33,5 +39,8 @@ struct cardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.light)
+        ContentView()
+            .preferredColorScheme(.dark)
     }
 }
