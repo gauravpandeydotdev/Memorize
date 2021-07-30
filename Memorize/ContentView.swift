@@ -20,7 +20,7 @@ struct ContentView: View {
 }
 
 struct cardView: View {
-    var isFaceUp: Bool = true
+    @State var isFaceUp = true
     
     var body: some View {
         ZStack {
@@ -32,6 +32,9 @@ struct cardView: View {
             } else {
                 card.fill().foregroundColor(.red)
             }
+        }
+        .onTapGesture {
+            isFaceUp = !isFaceUp
         }
     }
 }
